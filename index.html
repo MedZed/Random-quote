@@ -11,6 +11,9 @@
         crossorigin="anonymous">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+
     <!-- Style -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -52,18 +55,31 @@
         crossorigin="anonymous"></script>
     <script>
         function getquote() {
-            $.getJSON("https://talaikis.com/api/quotes/random/", function (a) {
-                $(".card-content").hide().html("<p class='quote'>" + a.quote + "</p><br><p class='auther'>&mdash; " + a.author + "</p>").fadeIn('slow');
-                $(".tw").attr("href", 'https://twitter.com/intent/tweet?text="' + a.quote + '" ' + a.author);
-            });
-        }
+  $(".fa-sync").removeClass("rotateIn");
+  $.getJSON("https://talaikis.com/api/quotes/random/", function(a) {
+    $(".card-content")
+      .hide()
+      .html(
+        "<p class='quote'>" +
+          a.quote +
+          "</p><br><p class='auther'>&mdash; " +
+          a.author +
+          "</p>"
+      )
+      .fadeIn("slow");
+    
+    $(".tw").attr(
+      "href",
+      'https://twitter.com/intent/tweet?text="' + a.quote + '" ' + a.author
+    );
+      $(".fa-sync").addClass("rotateIn");
 
+  });
+}
 
+$(document).ready(function() {
+  getquote();
+});
 
-        $(document).ready(function () {
-            getquote();
-        });
-
-// $(".btn-floating").on( "click", getquote() );
     </script>
 </body>
