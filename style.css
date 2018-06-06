@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i');
+
+body{
+    background-image: url(img/bg.jpg) !important;
+    background-position: center;
+    background-size: cover;
+}
+
+.auther {
+    margin: 15px 0 0 35px;
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    color: #2C2C2C;
+    transform: translateY(25%);
+    transition: 0.6s all ease-in-out;
+}
+
+.quote {
+    transform: translateY(25%);
+    transition: 0.6s all ease-in-out;
+    margin-top: 35px;
+    padding-left: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    color: #7e7e7e;
+    line-height: 22px;
+    margin-bottom: 35px;
+}
+.card-action{
+text-align: center;
+}
+
+
+.card{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.container{
+    margin-top:120px;
+}
+
+.tw{
+    color:#1dcaff !important;
+}
+.fb{
+    color:#3a589e !important;
+}
+.fa-sync{
+    font-size: 18px !important;
+}

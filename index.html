@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/card-img.jpg">
+                        <!-- <span class="card-title">"Random Quote"</span> -->
+                        <button onclick="getquote()" class="btn-floating halfway-fab waves-effect waves-light black">
+                            <i class="fas fa-sync"></i>
+                        </button>
+                    </div>
+                    <div class="card-content">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        </p>
+                    </div>
+                    <div class="card-action">
+                        <a class="tw" href="#">Tweet it
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <!-- <a class="fb" href="#">Facebook <i class="fab fa-facebook"></i></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+        function getquote() {
+            $.getJSON("https://talaikis.com/api/quotes/random/", function (a) {
+                $(".card-content").hide().html("<p class='quote'>" + a.quote + "</p><br><p class='auther'>&mdash; " + a.author + "</p>").fadeIn('slow');
+                $(".tw").attr("href", 'https://twitter.com/intent/tweet?text="' + a.quote + '" ' + a.author);
+            });
+        }
+
+
+
+        $(document).ready(function () {
+            getquote();
+        });
+
+// $(".btn-floating").on( "click", getquote() );
+    </script>
+</body>
